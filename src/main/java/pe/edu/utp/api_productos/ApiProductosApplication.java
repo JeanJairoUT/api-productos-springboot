@@ -5,7 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.persistence.autoconfigure.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication(scanBasePackages = {"pe.edu.utp.api_productos", "controller", "service", "model", "repository"})
+// Se añadió "config" al escaneo de paquetes
+@SpringBootApplication(scanBasePackages = {"pe.edu.utp.api_productos", "controller", "service", "model", "repository", "config"})
 @EnableJpaRepositories(basePackages = "repository")
 @EntityScan(basePackages = "model")
 public class ApiProductosApplication {
