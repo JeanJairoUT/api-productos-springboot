@@ -21,13 +21,13 @@ public class ProductoController {
     @Autowired
     private ProductoService service;
 
-    // 1. GET /api/productos (Listar todos)
+    
     @GetMapping
     public List<Producto> listar() {
         return service.listar();
     }
 
-    // 2. GET /api/productos/{id} (Buscar por ID - NUEVO)
+    
     @GetMapping("/{id}")
     public ResponseEntity<Producto> buscarPorId(@PathVariable int id) {
         Producto p = service.buscarPorId(id);
@@ -37,13 +37,13 @@ public class ProductoController {
         return ResponseEntity.notFound().build();
     }
 
-    // 3. POST /api/productos (Guardar nuevo)
+    
     @PostMapping
     public Producto guardar(@RequestBody Producto p) {
         return service.guardar(p);
     }
 
-    // 4. PUT /api/productos/{id} (Actualizar - NUEVO)
+    
     @PutMapping("/{id}")
     public ResponseEntity<Producto> actualizar(@PathVariable int id, @RequestBody Producto p) {
         Producto existente = service.buscarPorId(id);
@@ -56,7 +56,7 @@ public class ProductoController {
         return ResponseEntity.notFound().build();
     }
 
-    // 5. DELETE /api/productos/{id} (Eliminar)
+    
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminar(@PathVariable int id) {
         Producto existente = service.buscarPorId(id);

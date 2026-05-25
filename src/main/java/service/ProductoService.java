@@ -13,19 +13,19 @@ public class ProductoService {
     private ProductoRepository repository;
 
     public List<Producto> listar() {
-        return repository.findAll(); // SELECT * FROM productos
+        return repository.findAll();
     }
 
-    // NUEVO MÉTODO
+    
     public Producto buscarPorId(int id) {
-        return repository.findById(id).orElse(null); // Busca por ID, si no lo encuentra devuelve null
+        return repository.findById(id).orElse(null);
     }
 
     public Producto guardar(Producto p) {
-        return repository.save(p); // INSERT o UPDATE INTO productos
+        return repository.save(p); 
     }
 
     public void eliminar(int id) {
-        repository.deleteById(id); // DELETE FROM productos WHERE id = ?
+        repository.deleteById(id);
     }
 }
